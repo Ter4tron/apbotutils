@@ -1,0 +1,18 @@
+Package: apbotutils
+Title: Collection of functions I use for my work
+Version: 0.0.0.9000
+Authors@R: 
+    person("David", "Lenarčič", , "david.lenarcic@bf.uni-lj.si", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: The package includes functions that help some data analysis. Currently only includes the calculation of the z score.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1.9001
+Imports: 
+    dplyr,
+    purrr,
+    rlang
+Depends: 
+    R (>= 2.10)
