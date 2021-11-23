@@ -1,13 +1,13 @@
-#' Title
+#' Function that automatically calculates the mean, standard deviation and standard error of desired variables
 #'
 #' @param df.name name of data frame to be rearranged as a string
 #' @param group vector of strings with names of the columns you wish to group by
-#' @param columns vector of strings with names of the columns you with to summarise
+#' @param columns vector of strings with names of the columns you wish to summarise
 #'
 #' @return A data frame with specified means, standard deviations and standard errors
 #' @export
 #'
-avg.tbl <- function(df.name, group, columns){
+summarised.tbl <- function(df.name, group, columns){
   #codestart <- "df %>% dplyr::group_by"
   #code <- paste(codestart, "(", group, ")", "%>% dplyr::summarise(", sep = "")
 
@@ -25,7 +25,7 @@ avg.tbl <- function(df.name, group, columns){
   summarised <- paste("dplyr::summarise(", "grouped.final", ",", "sample.size = dplyr::n(),", sep = "")
 
   for(i in columns){
-    summarised <- paste(summarised, i, ".avg = mean(", i, ", na.rm = T)", ",",
+    summarised <- paste(summarised, i, ".mean = mean(", i, ", na.rm = T)", ",",
                         i, ".sd = sd(", i, ", na.rm = T)", ",", sep = "")
   }
 
