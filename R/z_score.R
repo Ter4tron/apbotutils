@@ -6,8 +6,8 @@
 #' @export
 
 z.score <- function(x){
-  avg <- mean(x)
-  sd <- sd(x)
+  avg <- mean(x, na.rm = TRUE)
+  sd <- sd(x, na.rm = TRUE)
 
   z <- (x - avg)/sd
   return(z)
